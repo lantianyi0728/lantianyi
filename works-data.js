@@ -13,35 +13,36 @@
 //   tags         标签数组，用来筛选。一个作品可以有多个标签
 const works = [
   {
-    title: '长风成卷 · 博客应用',
-    description: '文章展示、接口与数据库。',
-    image: 'assets/work-blog.png',
-    url: 'https://ffd-p2-blog.netlify.app/',
+    title: '三大主流 · 前端框架',
+    description: 'web前端框架的对比分析。',
+    image: 'a.jpg',   // ←修改这里
+    url: 'https://ffd‑p2‑blog.netlify.app/',
     year: 2026,
     tags: ['前端', '后端', '数据库'],
   },
   {
-    title: '群像云图 · 社区应用',
+    title: '后端开发 · 应用落地',
     description: '内容发布与社区互动。',
-    image: 'assets/work-community.png',
-    url: 'https://ffd-p3-community.netlify.app/',
+    image: 'b.jpg',  // ←修改这里
+    url: 'https://ffd‑p3‑community.netlify.app/',
     year: 2026,
     tags: ['前端', '数据库', '部署'],
   },
   {
-    title: '一笺心意 · 祝福卡片',
-    description: '卡片制作与作品分享。',
-    image: 'assets/work-greeting-card.png',
-    url: 'https://ffd-p4-greeting-card.netlify.app/',
+    title: '数据库 · 查询存储',
+    description: '数据库的查询与存储操作',
+    image: 'c.jpg', // ←修改这里
+    url: 'https://ffd‑p4‑greeting‑card.netlify.app/',
     year: 2025,
     tags: ['前端', 'AI'],
   },
   {
-    title: '星声音乐站 · 音乐应用',
-    description: '网页音频与交互实践。',
-    image: 'assets/work-music-station.png',
-    url: 'https://ffd-p5-music-station.netlify.app/',
+    title: '全球顶尖大模型 · der包',
+    description: '驯服与调教教程详解',
+    image: 'd.jpg', // ←修改这里
+    url: 'https://ffd‑p5‑music‑station.netlify.app/',
     year: 2025,
     tags: ['前端', '测试'],
   },
 ]
+
