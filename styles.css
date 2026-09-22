@@ -63,7 +63,7 @@ nav a.is-current { color: var(--heading); font-weight: 600; text-decoration: und
 .hero-top { display: flex; justify-content: space-between; align-items: center; gap: 32px; }
 h1 { font-size: 50px; font-weight: 600; color: var(--heading); letter-spacing: 2px; margin-bottom: 16px; }
 h1 span { font-size: 32px; font-weight: 400; letter-spacing: 0; color: var(--subheading); margin-left: 20px; }
-.hero-role { margin-bottom: 12px; font-size: 20px; }
+.hero-role { margin-bottom: 12px; font-size: 18px; }
 .hero-school { color: var(--muted); font-size: 18px; }
 .hero-visual { flex-shrink: 0; }
 .hero-visual figure { padding: 9px; border: 1px solid #d8ceb9; background: #fffefa; box-shadow: 0 12px 32px #3444390b; }
@@ -102,7 +102,7 @@ h1 span { font-size: 32px; font-weight: 400; letter-spacing: 0; color: var(--sub
 .portfolio-list { padding: 0; margin: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
 .work-card { min-width: 0; }
 .work-card > a { display: block; height: 100%; border: 1px solid #ddd8cb; border-radius: 6px; overflow: hidden; background: #fffdf8; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
-.work-card > a:hover { text-decoration: none; transform: translateY(-4px); border-color: #b7a88d; box-shadow: 0 14px 30px #34433810; }
+.work-card > a:hover { text-decoration: none; transform: translateX(20px); border-color: #b7a88d; box-shadow: 0 14px 30px #34433810; }
 .work-card > a:focus-visible { outline-offset: 5px; }
 .work-cover { background: #e5e0d1; padding: 24px; overflow: hidden; }
 .work-community .work-cover { background: #dbe5dc; }
