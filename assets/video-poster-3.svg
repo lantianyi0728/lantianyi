@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="猫狗采访 的封面占位">
+  <rect width="640" height="360" fill="#f0ead9"/>
+  <rect y="250" width="640" height="110" fill="#e2d8c2"/>
+  <g>
+    <!-- 狗 -->
+    <ellipse cx="200" cy="230" rx="72" ry="60" fill="#c9a878"/>
+    <ellipse cx="132" cy="196" rx="26" ry="38" fill="#b8975f" transform="rotate(-18 132 196)"/>
+    <ellipse cx="268" cy="196" rx="26" ry="38" fill="#b8975f" transform="rotate(18 268 196)"/>
+    <ellipse cx="200" cy="252" rx="40" ry="34" fill="#e0c9a4"/>
+    <circle cx="178" cy="218" r="8" fill="#3a3128"/>
+    <circle cx="222" cy="218" r="8" fill="#3a3128"/>
+    <ellipse cx="200" cy="244" rx="15" ry="11" fill="#4a3f33"/>
+    <path d="M186 262q14 12 28 0" stroke="#4a3f33" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- 猫 -->
+    <ellipse cx="440" cy="238" rx="64" ry="54" fill="#9aa3a8"/>
+    <path d="M392 196l-6-46 42 26z" fill="#8b949a"/>
+    <path d="M488 196l6-46-42 26z" fill="#8b949a"/>
+    <circle cx="420" cy="228" r="7" fill="#2f3639"/>
+    <circle cx="460" cy="228" r="7" fill="#2f3639"/>
+    <path d="M432 250l8 6 8-6" stroke="#2f3639" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <g stroke="#5d666b" stroke-width="2" opacity=".7">
+      <path d="M404 244l-30-8M404 252l-30 4M476 244l30-8M476 252l30 4"/>
+    </g>
+    <!-- 麦克风 -->
+    <rect x="308" y="150" width="8" height="120" rx="4" fill="#6d746d"/>
+    <circle cx="312" cy="140" r="16" fill="#4a5450"/>
+  </g>
+  <rect x="26" y="322" width="120" height="6" rx="3" fill="#b8a27d" opacity=".8"/>
+  <rect x="494" y="322" width="120" height="6" rx="3" fill="#b8a27d" opacity=".8"/>
+</svg>

@@ -1,0 +1,297 @@
+/* AI 视频试验田 · 专用样式
+   复用 index.html 的设计变量（墨绿/古铜/米底），只补这一页特有的版式。 */
+
+/* ---------- 首屏 ---------- */
+/* 修复"蒙版"问题：styles.css 把 .section 默认设为 opacity:.28 + 下移 24px，
+   等 app.js 滚动到该栏目才淡入。本页不加载 app.js，内容会一直卡在半透明。
+   这里恢复常态，改用纯 CSS 做一次性淡入动画——不依赖 JS，禁用 JS 也正常显示。 */
+.section {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .section,
+  .ai-hero {
+    animation: ai-reveal .6s ease both;
+  }
+  @keyframes ai-reveal {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+.ai-hero {
+  padding: 60px 0 40px;
+  border-bottom: 1px solid var(--line);
+}
+.ai-kicker {
+  font-size: 15px;
+  letter-spacing: 3px;
+  color: var(--subheading);
+  margin-bottom: 18px;
+}
+.ai-title {
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--heading);
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+.ai-lede {
+  max-width: 40em;
+  font-size: var(--body-size);
+  color: var(--text);
+}
+.ai-stats {
+  display: flex;
+  gap: 60px;
+  margin-top: 36px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+.ai-stats strong {
+  display: block;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--heading);
+  font-variant-numeric: tabular-nums;
+}
+.ai-stats span {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* ---------- 作品放映厅 ---------- */
+.ai-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+.ai-card {
+  border: 1px solid #ddd8cb;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fffdf8;
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.ai-card:hover {
+  border-color: #b7a88d;
+  box-shadow: 0 14px 30px #34433810;
+}
+.ai-player {
+  position: relative;
+  background: #141b18;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+/* contain + 深色底：竖版视频不会被裁掉头脚，黑边看起来也自然 */
+.ai-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #141b18;
+}
+.ai-duration {
+  position: absolute;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: .04em;
+  color: #fff;
+  background: rgba(37, 74, 64, .88);
+}
+.ai-duration {
+  top: 12px;
+  right: 12px;
+}
+.ai-copy {
+  padding: 20px 26px 24px;
+}
+.ai-copy h3 {
+  font-size: 22px;
+  color: var(--heading);
+}
+.ai-copy p {
+  margin-top: 9px;
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+.ai-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.ai-tags span {
+  padding: 3px 11px;
+  border: 1px solid #ded8cb;
+  border-radius: 999px;
+  font-size: 13px;
+  color: #5c5a52;
+}
+/* 待补卡片：没有视频，用浅底 + 虚线边框区别于其他卡片 */
+.ai-player--pending {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(45deg, #f1eee5, #f1eee5 12px, #eae6db 12px, #eae6db 24px);
+}
+.ai-pending-icon {
+  font-size: 44px;
+  color: #b8a27d;
+  letter-spacing: 4px;
+  line-height: 1;
+}
+.ai-player--pending .ai-duration {
+  background: rgba(124, 99, 72, .85);
+}
+/* 视频文件加载失败时（由 JS 打上 data-unavailable），不让用户对着黑框发呆 */
+.ai-player[data-unavailable]::after {
+  content: '视频暂时加载不了，稍后补上';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 15px;
+  color: #8a857a;
+  background: #f1eee5;
+}
+
+/* ---------- 吐槽区 ---------- */
+.ai-complaints {
+  background: #f4f2eb;
+}
+.ai-complaint-list {
+  display: grid;
+  gap: 0;
+}
+.ai-complaint {
+  display: flex;
+  gap: 26px;
+  padding: 24px 0;
+  border-bottom: 1px solid #e4ded2;
+}
+.ai-complaint:first-child {
+  padding-top: 6px;
+}
+.ai-complaint-no {
+  flex-shrink: 0;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+}
+.ai-complaint h3 {
+  font-size: 21px;
+  color: var(--subheading);
+}
+.ai-complaint p {
+  margin-top: 8px;
+  font-size: var(--body-size);
+  line-height: 1.9;
+}
+.ai-aside {
+  margin-top: 30px;
+  padding: 18px 22px;
+  border-left: 3px solid var(--gold);
+  background: var(--heading-wash);
+  border-radius: 0 4px 4px 0;
+  font-size: 17px;
+}
+.ai-aside strong {
+  color: var(--heading);
+  font-weight: 600;
+}
+
+/* ---------- 流程 ---------- */
+.ai-steps {
+  margin: 0;
+  padding: 0 0 0 4px;
+  list-style: none;
+  counter-reset: step;
+}
+.ai-steps li {
+  position: relative;
+  padding: 0 0 26px 52px;
+  font-size: var(--body-size);
+  line-height: 1.9;
+  counter-increment: step;
+}
+.ai-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 15px;
+  color: var(--subheading);
+  background: #fffdf8;
+}
+.ai-steps li::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 38px;
+  bottom: 4px;
+  width: 1px;
+  background: #e4ded2;
+}
+.ai-steps li:last-child {
+  padding-bottom: 0;
+}
+.ai-steps li:last-child::after {
+  display: none;
+}
+.ai-steps strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--heading);
+  margin-bottom: 4px;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1000px) {
+  .ai-title { font-size: 42px; }
+  .ai-stats { gap: 40px; }
+}
+@media (max-width: 640px) {
+  .ai-hero { padding: 32px 0 26px; }
+  .ai-title { font-size: 32px; }
+  .ai-kicker { font-size: 13px; letter-spacing: 2px; }
+  .ai-stats { gap: 28px; margin-top: 24px; padding-top: 18px; }
+  .ai-stats strong { font-size: 26px; }
+  .ai-grid { grid-template-columns: 1fr; gap: 22px; }
+  .ai-copy { padding: 16px 18px 19px; }
+  .ai-copy h3 { font-size: 20px; }
+  .ai-copy p { font-size: 16px; }
+  .ai-complaint { gap: 16px; padding: 18px 0; }
+  .ai-complaint-no { font-size: 20px; }
+  .ai-complaint h3 { font-size: 18px; }
+  .ai-complaint p { font-size: var(--body-size); }
+  .ai-steps li { padding-left: 42px; font-size: var(--body-size); }
+  .ai-steps li::before { width: 27px; height: 27px; line-height: 25px; font-size: 13px; }
+  .ai-steps li::after { left: 13px; }
+  .ai-steps strong { font-size: 17px; }
+  .ai-aside { font-size: 16px; padding: 14px 16px; }
+}
+@media print {
+  .ai-complaints { background: none; }
+  .ai-card, .ai-complaint { break-inside: avoid; }
+}

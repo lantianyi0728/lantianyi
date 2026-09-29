@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="棋魂 二创 的封面占位">
+  <defs>
+    <linearGradient id="p4bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8e2d2"/>
+      <stop offset="1" stop-color="#d8cfb9"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#p4bg)"/>
+  <!-- 棋盘 -->
+  <g transform="translate(180 46) rotate(-4)">
+    <rect width="280" height="280" rx="6" fill="#dcb87e" stroke="#a8865a" stroke-width="3"/>
+    <g stroke="#6d5230" stroke-width="1.6" opacity=".85">
+      <path d="M28 28h224M28 60h224M28 92h224M28 124h224M28 156h224M28 188h224M28 220h224M28 252h224"/>
+      <path d="M28 28v224M60 28v224M92 28v224M124 28v224M156 28v224M188 28v224M220 28v224M252 28v224"/>
+    </g>
+    <!-- 棋子 -->
+    <g>
+      <circle cx="60" cy="60" r="12.5" fill="#2b2b2b"/>
+      <circle cx="156" cy="92" r="12.5" fill="#2b2b2b"/>
+      <circle cx="220" cy="156" r="12.5" fill="#2b2b2b"/>
+      <circle cx="92" cy="124" r="12.5" fill="#faf8f2" stroke="#b9b3a4" stroke-width="1.4"/>
+      <circle cx="188" cy="188" r="12.5" fill="#faf8f2" stroke="#b9b3a4" stroke-width="1.4"/>
+      <circle cx="124" cy="220" r="12.5" fill="#faf8f2" stroke="#b9b3a4" stroke-width="1.4"/>
+      <circle cx="252" cy="60" r="12.5" fill="#faf8f2" stroke="#b9b3a4" stroke-width="1.4"/>
+    </g>
+  </g>
+  <!-- 光晕 -->
+  <circle cx="520" cy="80" r="58" fill="#f7f3e6" opacity=".55"/>
+  <rect x="26" y="318" width="130" height="6" rx="3" fill="#a8865a" opacity=".7"/>
+</svg>

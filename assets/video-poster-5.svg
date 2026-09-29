@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="拾玉 的封面占位">
+  <defs>
+    <linearGradient id="p5bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3d5148"/>
+      <stop offset="1" stop-color="#1c2a25"/>
+    </linearGradient>
+    <radialGradient id="p5jade" cx="38%" cy="34%">
+      <stop offset="0" stop-color="#eaf6ee"/>
+      <stop offset="45%" stop-color="#a8d5bd"/>
+      <stop offset="1" stop-color="#4f8a6d"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#p5bg)"/>
+  <g opacity=".22" fill="#cfe4d6">
+    <circle cx="120" cy="70" r="2"/>
+    <circle cx="560" cy="120" r="2.4"/>
+    <circle cx="480" cy="290" r="1.8"/>
+    <circle cx="200" cy="300" r="2.2"/>
+    <circle cx="380" cy="50" r="1.6"/>
+  </g>
+  <!-- 玉璧 -->
+  <g transform="translate(320 182)">
+    <circle r="96" fill="url(#p5jade)"/>
+    <circle r="96" fill="none" stroke="#e8f3ec" stroke-width="2" opacity=".6"/>
+    <circle r="34" fill="#2a3b33"/>
+    <circle r="34" fill="none" stroke="#dcebe2" stroke-width="2" opacity=".5"/>
+    <g stroke="#3f6a55" stroke-width="2" fill="none" opacity=".45">
+      <path d="M-70 -40q40 -26 80 -12t64 40"/>
+      <path d="M-64 46q44 22 84 4t56 -52"/>
+      <path d="M-40 -66q26 -18 56 -12"/>
+    </g>
+    <circle r="96" fill="none" stroke="#ffffff" stroke-width="10" opacity=".08"/>
+  </g>
+  <!-- 手 -->
+  <path d="M96 360c8-58 34-92 76-104 20-6 34 8 22 24-14 18-26 40-30 80z" fill="#2b3a33"/>
+  <rect x="26" y="316" width="120" height="6" rx="3" fill="#a8d5bd" opacity=".55"/>
+</svg>

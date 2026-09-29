@@ -4,100 +4,102 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content="noindex, nofollow" name="robots"/>
-  <meta content="课程练习：个人介绍、技能与作品门户" name="description"/>
+  <meta content="蓝天一的个人自我介绍：关于我、家乡、爱好与近况" name="description"/>
   <title>
-   我的个人主页
+   蓝天一 · 个人介绍
   </title>
   <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
   <!-- CSS 负责颜色、字体、布局；defer 让 JavaScript 在 HTML 解析完成后执行。 -->
   <link href="styles.css" rel="stylesheet"/>
-   <script src="works-data.js" defer></script>
-  <script src="works-render.js" defer></script>
   <script src="app.js" defer></script>
  </head>
  <body>
   <a class="skip-link" href="#main">
    跳到正文
   </a>
-  <!-- 第 4 课新增①：顶部阅读进度条，宽度由 JavaScript 控制 -->
+  <!-- 顶部阅读进度条，宽度由 JavaScript 控制 -->
   <div class="reading-progress" id="reading-progress">
   </div>
   <header class="site-header">
    <div class="container header-inner">
     <a class="brand" href="#about">
-     我的主页
+     蓝天一
     </a>
     <!-- href="#栏目ID" 是原生锚点：即使不加载 JavaScript，也能跳到对应栏目。 -->
     <nav aria-label="主导航">
      <a href="#about">
-      关于
+      关于我
      </a>
-     <a href="#experience">
-      经历
+     <a href="#hometown">
+      家乡
      </a>
-     <a href="#projects">
-      科研
+     <a href="#hobbies">
+      爱好
      </a>
-     <a href="#skills">
-      技能
+     <a href="#now">
+      最近
      </a>
-     <a href="#portfolio">
-      作品
+     <a href="#study">
+      学习
      </a>
-     <a href="#teaching">
-      教学
-     </a>
-     <a href="#publications">
-      成果
+     <a href="ai-video.html">
+      AI 视频
      </a>
     </nav>
    </div>
   </header>
   <main id="main">
-   <!-- HTML 练习：修改姓名、研究方向、照片路径和联系方式。 -->
    <section class="hero" id="about">
     <div class="container">
      <div class="hero-top">
       <div class="hero-copy">
        <h1>
-        蓝同学
+        蓝天一
         <span>
-         Blue
+         Lan Tianyi
         </span>
        </h1>
        <p class="hero-role">
-        软件技术专业学生 · 前端开发学习者 · 深度睡眠首席科研专家 · 一众专业科研项目导师·上课物理距离最近·的·<strong>student</strong>
+        广东阳春人，现居中山。喜欢跑步、弹吉他、打游戏、打桌球，也在研究 AI 漫剧怎么做。
        </p>
       </div>
       <div class="hero-visual">
        <figure>
-        <img alt="个人头像占位图，请替换为自己的图片" height="220" src="OIP-C.jpg" width="220"/>
+        <img alt="蓝天一的个人照片" height="220" src="OIP-C.jpg" width="220"/>
        </figure>
       </div>
      </div>
      <div class="research-direction" id="research-direction">
       <span class="eyebrow">
-       学习方向
+       我是谁
       </span>
       <p>
-       HTML5、CSS3、JavaScript，正在学习 Git、数据库与网站部署。
+       一个精力还挺旺的人：白天写写代码、跑跑步，晚上要么抱着吉他，要么约人去打两杆桌球，剩下的时间就琢磨 AI 视频怎么做得更好看。
       </p>
      </div>
      <div class="profile-details">
       <div>
        <span>
-        学习阶段
+        姓名
        </span>
        <p>
-        在校学习
+        蓝天一
        </p>
       </div>
       <div>
        <span>
-        所在城市
+        籍贯
        </span>
        <p>
-        珠海
+        广东阳春
+       </p>
+      </div>
+      <div>
+       <span>
+        现居地
+       </span>
+       <p>
+        广东中山
        </p>
       </div>
       <div>
@@ -108,71 +110,178 @@
         19859385228
        </p>
       </div>
-      <div>
-       <span>
-        学校地址
-       </span>
-       <p>
-        广东科学职业技术学院（清华大学珠海分校区）
-       </p>
-      </div>
      </div>
     </div>
    </section>
    <!-- 每个栏目复用 section → container → 标题/内容 的结构，统一由 CSS 控制样式。 -->
-   <section class="section" id="experience">
+   <section class="section" id="hometown">
     <div class="container">
      <header class="section-heading">
       <h2>
-       教育与工作经历
+       我的家乡 · 广东阳春
       </h2>
+      <p class="works-notice">
+       想了解更多，可以看百度百科的
+       <a href="https://baike.baidu.com/item/%E9%98%B3%E6%98%A5%E5%B8%82/3300308" rel="noopener noreferrer" target="_blank">
+        阳春市词条
+       </a>
+       。
+      </p>
      </header>
      <div class="section-content">
-      <!-- TASK-HTML：复制 experience-item 可增加一条自己的经历。 -->
       <div class="experience-item">
        <p class="experience-heading">
         <strong>
-         我的学校 · 软件技术专业
+         阳春在哪儿
         </strong>
         <time>
-         在读
+         广东·阳江
         </time>
        </p>
        <p class="experience-detail">
-        学习网页开发，用项目记录成长。
-        学习参与培训，驯服，测试国内顶级模型的工作（工作时长两年半）。
+        阳春是广东阳江代管的县级市，在粤西、漠阳江的上游。名字取自"漠水之阳，四季如春"。地方不小，山水多，节奏慢，是我长大的地方。想细看的话，
+        <a href="https://baike.baidu.com/item/%E9%98%B3%E6%98%A5%E5%B8%82/3300308" rel="noopener noreferrer" target="_blank">
+          这里有一份完整介绍
+        </a>
+        。
+       </p>
+      </div>
+      <div class="experience-item">
+       <p class="experience-heading">
+        <strong>
+         山和水
+        </strong>
+       </p>
+       <p class="experience-detail">
+        阳春在中国大陆最南端的喀斯特地貌核心区，山是青的、水是绿的。凌霄岩被叫作"南国第一洞府"，洞里的钟乳石又高又壮；春湾石林则被称作"南国第一石林"。夏天往洞里一钻，凉快得很。
+       </p>
+      </div>
+      <div class="experience-item">
+       <p class="experience-heading">
+        <strong>
+         春砂仁
+        </strong>
+       </p>
+       <p class="experience-detail">
+        阳春是"中国春砂仁之乡"。春砂仁是广东三宝之一，也是四大南药之首，能调理脾胃，国家地理标志产品。小时候家里煲汤、泡水都放它，离开家之后，一闻到那个味道就知道是阳春。
+       </p>
+      </div>
+      <div class="experience-item">
+       <p class="experience-heading">
+        <strong>
+         还有这些
+        </strong>
+       </p>
+       <p class="experience-detail">
+        阳春根雕、高流河墟这些老手艺和老集市，还有鸡笼顶的高山草甸、鹅凰嶂的森林。前两年《长安的荔枝》也来阳春取过景。
        </p>
       </div>
      </div>
     </div>
    </section>
-   <section class="section" id="projects">
+   <section class="section" id="hobbies">
     <div class="container">
      <header class="section-heading">
       <h2>
-       项目经历
+       我的爱好
+      </h2>
+      <p class="works-notice">
+       都是从喜欢开始，没一样是为了拿成绩。
+      </p>
+     </header>
+     <div class="section-content">
+      <div class="experience-item">
+       <p class="experience-heading">
+        <strong>
+         跑步
+        </strong>
+        <time>
+         坚持中
+        </time>
+       </p>
+       <p class="experience-detail">
+        跑起来大脑就放空了，跑完那一身汗，是我一天里最舒服的时候。心情不好的时候更要去跑，跑完很多事就没那么大了。
+       </p>
+      </div>
+      <div class="experience-item">
+       <p class="experience-heading">
+        <strong>
+         弹吉他
+        </strong>
+       </p>
+       <p class="experience-detail">
+        弹得不算专业，图个开心。一个人在家弹上半天，时间过得特别快。最喜欢的还是弹几首自己听了很多年的老歌。
+       </p>
+      </div>
+      <div class="experience-item">
+       <p class="experience-heading">
+        <strong>
+         打桌球
+        </strong>
+        <time>
+         常约
+        </time>
+       </p>
+       <p class="experience-detail">
+        台球厅是我和朋友最常去的地方。不追求打得多好，就喜欢那种一杆一杆推过去、整个人安静下来的感觉。偶尔进一个漂亮的球，能高兴一晚上。
+       </p>
+      </div>
+      <div class="experience-item">
+       <p class="experience-heading">
+        <strong>
+         打游戏
+        </strong>
+       </p>
+       <p class="experience-detail">
+        喜欢和朋友一起玩，也爱琢磨游戏是怎么设计出来的——为什么这个关卡让人上瘾，为什么那个剧情让人记得住。
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="now">
+    <div class="container">
+     <header class="section-heading">
+      <h2>
+       最近在做什么
       </h2>
      </header>
      <div class="section-content">
       <article class="research-item">
        <h3>
         <time>
-         课程练习
+         现在
         </time>
-        个人主页
+        研究 AI 漫剧
        </h3>
        <p>
-        项目内容：制作自己的网页，展示资料与作品，记录修改、测试与发布过程。
+        正在试着用 AI 做漫画短剧：怎么把剧本拆成分镜、怎么让画面里的人保持一致、怎么把提示词写好。现在还在摸索阶段，但挺上瘾的。
+        做出来的短片和一些翻车记录，都放在
+        <a href="ai-video.html">
+         AI 视频试验田
+        </a>
+        里了。
+       </p>
+      </article>
+      <article class="research-item">
+       <h3>
+        <time>
+         也在做
+        </time>
+        写网页
+       </h3>
+       <p>
+        从零把这个个人主页搭出来，一边学一边改。做网页和做视频有个共同点——都是"想清楚了才好看，想不清楚怎么调都别扭"。
        </p>
       </article>
      </div>
     </div>
    </section>
-   <section class="section" id="skills">
+   <section class="section" id="study">
     <div class="container">
      <header class="section-heading">
       <h2>
-       技能与实践
+       学习与技能
       </h2>
      </header>
      <div class="section-content">
@@ -199,134 +308,24 @@
      </div>
     </div>
    </section>
-   <section class="section" id="portfolio">
+   <section class="section" id="contact">
     <div class="container">
      <header class="section-heading">
       <h2>
-       作品门户
-      </h2>
-      <p class="works-notice">
-       以下为教学示例，完成后可替换为自己的作品。
-      </p>
-     </header>
-     <!-- 第 5 课新增：筛选与排序工具条。里面的按钮由 JavaScript 生成，
-          不写 JS 时这里是空的，页面照常显示全部作品。 -->
-     <div class="works-toolbar">
-      <div class="works-tags" id="works-tags">
-      </div>
-      <button class="works-sort" id="works-sort" type="button">
-       按年份：新→旧
-      </button>
-     </div>
-     <ol class="portfolio-list">
-      <li class="work-card work-blog">
-       <a href="https://ffd-p2-blog.netlify.app/" rel="noopener noreferrer" target="_blank">
-        <div class="work-cover">
-         <img alt="长风成卷 · 博客应用的实际网页截图" decoding="async" height="800" src="a.jpg" width="1200"/>
-        </div>
-        <div class="work-copy">
-         <h3>
-          长风成卷 · 博客应用
-         </h3>
-         <p>
-          文章展示、接口与数据库。
-         </p>
-        </div>
-       </a>
-      </li>
-      <li class="work-card work-community">
-       <a href="https://ffd-p3-community.netlify.app/" rel="noopener noreferrer" target="_blank">
-        <div class="work-cover">
-         <img alt="群像云图 · 社区应用的实际网页截图" decoding="async" height="800" src="b.jpg" width="1200"/>
-        </div>
-        <div class="work-copy">
-         <h3>
-          群像云图 · 社区应用
-         </h3>
-         <p>
-          内容发布与社区互动。
-         </p>
-        </div>
-       </a>
-      </li>
-      <li class="work-card work-greeting-card">
-       <a href="https://ffd-p4-greeting-card.netlify.app/" rel="noopener noreferrer" target="_blank">
-        <div class="work-cover">
-         <img alt="一笺心意 · 祝福卡片的实际网页截图" decoding="async" height="800" src="c.jpg" width="1200"/>
-        </div>
-        <div class="work-copy">
-         <h3>
-          一笺心意 · 祝福卡片
-         </h3>
-         <p>
-          卡片制作与作品分享。
-         </p>
-        </div>
-       </a>
-      </li>
-      <li class="work-card work-music-station">
-       <a href="https://ffd-p5-music-station.netlify.app/" rel="noopener noreferrer" target="_blank">
-        <div class="work-cover">
-         <img alt="星声音乐站 · 音乐应用的实际网页截图" decoding="async" height="800" src="d.jpg" width="1200"/>
-        </div>
-        <div class="work-copy">
-         <h3>
-          星声音乐站 · 音乐应用
-         </h3>
-         <p>
-          网页音频与交互实践。
-         </p>
-        </div>
-       </a>
-      </li>
-     </ol>
-    </div>
-   </section>
-   <section class="section" id="teaching">
-    <div class="container">
-     <header class="section-heading">
-      <h2>
-       学习与实践
+       联系我
       </h2>
      </header>
      <div class="section-content">
       <div class="teaching-group">
        <h3>
-        本学期目标
+        想聊聊的话
        </h3>
        <ol>
         <li>
-         每次课完成一个可运行的小改动。
+         电话：19859385228。
         </li>
         <li>
-         能解释自己修改的 HTML、CSS 和 JavaScript。
-        </li>
-        <li>
-         使用 Git 记录版本，让作品能被别人访问。
-        </li>
-       </ol>
-      </div>
-     </div>
-    </div>
-   </section>
-   <section class="section" id="publications">
-    <div class="container">
-     <header class="section-heading">
-      <h2>
-       学习记录
-      </h2>
-     </header>
-     <div class="section-content">
-      <div class="publication-group">
-       <h3>
-        我的记录
-       </h3>
-       <ol class="references">
-        <li>
-         完成第一张个人主页。
-        </li>
-        <li>
-         后续在这里补充自己的真实成果。
+         约跑步、约桌球，或者聊聊 AI 漫剧，都很欢迎。
         </li>
        </ol>
       </div>
@@ -334,7 +333,7 @@
     </div>
    </section>
   </main>
-  <!-- 第 4 课新增：这两块由 JavaScript 控制，不写 JS 时它们不会出现 -->
+  <!-- 这两块由 JavaScript 控制，不写 JS 时它们不会出现 -->
   <p aria-live="polite" class="section-indicator" id="section-indicator">
   </p>
   <button aria-label="返回页面顶部" class="to-top" id="to-top" type="button">
@@ -345,8 +344,8 @@
     <a href="#about">
      回到顶部
     </a>
-    <a href="#portfolio">
-     作品门户
+    <a href="ai-video.html">
+     AI 视频试验田
     </a>
    </div>
   </footer>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="断桥雨夜 一 的封面占位">
+  <defs>
+    <linearGradient id="p1sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a4a4e"/>
+      <stop offset="1" stop-color="#1e2a2c"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#p1sky)"/>
+  <path d="M0 250h640v110H0z" fill="#141c1e"/>
+  <path d="M0 258c60-10 120 6 180-2s120-12 180-4 160 10 280-6v20c-120 16-220 4-280-4s-120-4-180 4-120 8-180 2z" fill="#223033" opacity=".8"/>
+  <g stroke="#8fa6a3" stroke-width="1.2" opacity=".55">
+    <path d="M120 60l-18 40M200 40l-20 46M300 70l-16 38M400 46l-20 44M500 66l-18 40M560 90l-14 32M70 120l-16 36M240 130l-14 32M340 140l-16 34M460 120l-14 32M540 150l-16 34"/>
+  </g>
+  <g fill="#0f1719">
+    <rect x="150" y="196" width="340" height="10" rx="3"/>
+    <rect x="150" y="206" width="340" height="56"/>
+    <path d="M150 206h340v10H150z" fill="#1c2729"/>
+  </g>
+  <g fill="#233133">
+    <rect x="170" y="262" width="16" height="60"/>
+    <rect x="454" y="262" width="16" height="60"/>
+  </g>
+  <circle cx="320" cy="240" r="30" fill="#111a1c" opacity=".9"/>
+  <rect x="26" y="316" width="120" height="6" rx="3" fill="#5d7370" opacity=".7"/>
+</svg>
