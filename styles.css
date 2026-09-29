@@ -129,6 +129,10 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; }
   .hero-visual img { width: 140px; height: 140px; }
   .hero-visual figure { padding: 6px; }
   .hero-visual { position: absolute; top: 0; right: 0; }
+  /* 手机上放不下那行字，也没有"悬停"，所以关掉滑动、藏起文字 */
+  .reveal-text { display: none; }
+  .hero-visual figure:hover img,
+  .hero-visual figure:focus-within img { transform: none; }
   .research-direction { margin-top: 23px; }
   .research-direction p { font-size: var(--body-size); }
   .profile-details { gap: 14px 20px; }
@@ -287,25 +291,58 @@ h1::after {
 h1 { font-size: 54px; letter-spacing: 3px; }
 h1 span { font-size: 30px; letter-spacing: 2px; }
 
-/* 头像：厚重一点的画框 + 悬停微微抬起 */
+/* 头像：厚重画框；鼠标移上去，照片向右滑开两倍宽度，露出后面的字 */
 .hero-visual figure {
   position: relative;
   padding: 11px;
   border: 1px solid #d8ceb9;
   background: #fffefa;
   box-shadow: 0 18px 44px #2f44381a, 0 2px 0 #e6dcc6 inset;
-  transition: transform .4s ease, box-shadow .4s ease;
+  /* overflow:hidden 是滑动效果的第二个关键：照片滑出后要被裁掉，
+     不能跑到画框外面去。 */
+  overflow: hidden;
+  transition: box-shadow .4s ease;
 }
 .hero-visual figure::after {
   content: '';
   position: absolute;
-  inset: -7px;
+  inset: 7px;
   border: 1px solid #e2d7bf;
   pointer-events: none;
+  z-index: 3;
 }
-.hero-visual figure:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 26px 56px #2f443824, 0 2px 0 #e6dcc6 inset;
+/* 藏在照片下面的那行字。
+   绝对定位铺满画框内容区，z-index 低于照片，所以照片在时被完全挡住。 */
+.reveal-text {
+  position: absolute;
+  inset: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0 14px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--heading);
+  background: #f2f5ee;
+  z-index: 1;
+}
+.hero-visual img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  /* 关键：位移用 200%（即自身宽度的 2 倍），滑出画框后被 overflow:hidden 裁掉 */
+  transition: transform .55s cubic-bezier(.22, .61, .36, 1);
+}
+/* 悬停 / 键盘聚焦都触发，照顾不用鼠标的人 */
+.hero-visual figure:hover img,
+.hero-visual figure:focus-within img {
+  transform: translateX(200%);
 }
 .hero-role { font-size: 19px; line-height: 1.9; max-width: 34em; }
 
@@ -483,6 +520,9 @@ nav a.is-current::after { right: 0; }
   .hero { background: none; }
   #now { background: none; }
   .hero-visual figure::after { display: none; }
+  /* 打印时把照片归位，藏起那行字，别让纸上出现半张脸加一堆字 */
+  .reveal-text { display: none; }
+  .hero-visual img { transform: none !important; }
   .skills-list li, #now .research-item, #contact .teaching-group,
   .profile-details > div, .experience-item { break-inside: avoid; }
 }
