@@ -527,3 +527,168 @@ nav a.is-current::after { right: 0; }
   .profile-details > div, .experience-item { break-inside: avoid; }
 }
 
+/* ==================================================================
+   AI 视频专题 · 密码门
+   浮层结构由 gate.js 动态插入，这里只管长相。
+   不需要这个功能时：删掉这一整段 + 两个页面里的 gate.js 引用即可。
+   ================================================================== */
+
+/* 浮层打开时锁住页面滚动 */
+html.gate-open { overflow: hidden; }
+/* 专题页未解锁时先把正文藏起来（只在 ai-video.html 生效） */
+html.gate-locked main,
+html.gate-locked footer,
+html.gate-locked .section-indicator,
+html.gate-locked .to-top { visibility: hidden; }
+
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.gate[hidden] { display: none; }
+
+.gate-backdrop {
+  position: absolute;
+  inset: 0;
+  background: #254a4061;
+  backdrop-filter: blur(3px);
+}
+
+.gate-box {
+  position: relative;
+  z-index: 1;
+  width: min(400px, 100%);
+  padding: 32px 30px 28px;
+  border: 1px solid var(--line);
+  background: #fffefa;
+  box-shadow: 0 24px 60px #1f332b2e;
+  text-align: center;
+  animation: gate-pop .28s cubic-bezier(.22, .61, .36, 1);
+}
+@keyframes gate-pop {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.gate-close {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: 22px/1 "Times New Roman", serif;
+  cursor: pointer;
+  transition: color .2s ease;
+}
+.gate-close:hover { color: var(--heading); }
+
+.gate-kicker {
+  margin: 0 0 10px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--subheading);
+}
+.gate-title {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--heading);
+}
+.gate-hint { margin: 0 0 20px; font-size: 15px; color: var(--muted); }
+
+/* 输入框：字体放大 + 拉开字距，4 位数字一眼看得清 */
+.gate-input {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  background: var(--background);
+  color: var(--heading);
+  font: 600 26px/1.4 "Times New Roman", "Resume Serif SC", serif;
+  letter-spacing: 12px;
+  text-align: center;
+  text-indent: 12px; /* 抵消最后一个字后面的字距，让 4 位数视觉居中 */
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.gate-input::placeholder { color: #c3c8c0; letter-spacing: 8px; text-indent: 8px; }
+.gate-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px #42635b1f;
+}
+
+.gate-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+.gate-btn {
+  flex: 1;
+  padding: 12px 18px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  font: 600 16px/1.4 "Times New Roman", "Resume Serif SC", serif;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.gate-btn:hover { border-color: var(--gold); color: var(--heading); }
+.gate-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.gate-btn--primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+.gate-btn--primary:hover {
+  border-color: var(--heading);
+  background: var(--heading);
+  color: #fff;
+}
+
+/* 「小样还想偷看」提示框：一行字 + 下面一个「继续」按钮 */
+.gate--deny .gate-backdrop { background: #254a4085; }
+.gate-box--deny {
+  width: min(560px, 100%);
+  padding: 32px 30px 26px;
+  border-color: var(--gold);
+  animation: gate-shake .5s cubic-bezier(.36, .07, .19, .97);
+}
+@keyframes gate-shake {
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(4px); }
+  30%, 50%, 70% { transform: translateX(-7px); }
+  40%, 60% { transform: translateX(7px); }
+}
+.gate-deny-text {
+  margin: 0 0 22px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.85;
+  color: var(--heading);
+}
+.gate-box--deny .gate-btn { flex: none; width: 100%; }
+
+@media (max-width: 640px) {
+  .gate-box { padding: 26px 20px 22px; }
+  .gate-title { font-size: 21px; }
+  .gate-input { font-size: 22px; letter-spacing: 8px; text-indent: 8px; }
+  .gate-deny-text { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gate-box { animation: none; }
+}
+@media print {
+  .gate { display: none !important; }
+}
+

@@ -12,7 +12,7 @@
   <link href="styles.css" rel="stylesheet"/>
   <link href="ai-video.css" rel="stylesheet"/>
  </head>
- <body>
+ <body data-gate="page">
   <a class="skip-link" href="#main">
    跳到正文
   </a>
@@ -385,5 +385,7 @@
    </div>
   </footer>
   <script src="ai-video.js" defer></script>
+  <!-- data-gate="page"：直接输网址进来也会被拦，要先输密码 -->
+  <script src="gate.js" defer></script>
  </body>
 </html>
